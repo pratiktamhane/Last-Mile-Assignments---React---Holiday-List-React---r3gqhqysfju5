@@ -42,11 +42,10 @@ class App extends Component {
       <div id="main">
         {/* Do not remove the main div */}
         <ol>
-          {this.cityList
-            .filter((count) => count.country === "India")
-            .map((count, index) => (
-              <li key={`location${index + 1}`}>{count.name}</li>
-            ))}
+          {this.cityList.map((ele, index) => {
+            if (index < 3)
+              return <li key={"location" + parseInt(index) + 1}>{ele.name}</li>;
+          })}
         </ol>
       </div>
     );
